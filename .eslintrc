@@ -1,0 +1,20 @@
+{
+  "env": {
+    "jest": true
+  },
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "import",
+    "prettier",
+    "jest"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }]
+  }
+}
