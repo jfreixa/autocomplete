@@ -29,16 +29,18 @@ class App extends Component {
 
     return (
       <Container>
-        <Autocomplete ariaLabelledBy="manager selector" items={employees} onSelect={window.console.log} >
-          {(item) => (
-            <Item
-              name={item.name}
-              lastName={item.lastName}
-              email={item.email}
-              firstName={item.firstName}
-            />
-          )}
-        </Autocomplete>
+        <div id="manager_selector">
+          <Autocomplete ariaLabelledBy="manager_selector" items={employees} onSelect={window.console.log} >
+            {(item) => (
+              <Item
+                name={item.name}
+                lastName={item.lastName}
+                email={item.email}
+                firstName={item.firstName}
+              />
+            )}
+          </Autocomplete>
+        </div>
       </Container>
     );
   }

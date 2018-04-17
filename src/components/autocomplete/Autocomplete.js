@@ -136,7 +136,6 @@ export default class Autocomplete extends Component {
         aria-expanded={isOpen}
       >
         <Searchbox
-          type="text"
           value={value}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyPress}
@@ -164,7 +163,7 @@ export default class Autocomplete extends Component {
                 active={item.id === activeDescendant}
                 aria-selected={item.id === activeDescendant}
               >
-                {children(item)}
+                {children(item, item.id === activeDescendant)}
               </Option>
             ))}
           </Listbox>

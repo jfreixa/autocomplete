@@ -4,7 +4,8 @@ const Searchbox = styled.input.attrs({
   "aria-multiline": false,
   role: "searchbox",
   "aria-autocomplete": "list",
-  "aria-controls": "autocomplete-results"
+  "aria-controls": "autocomplete-results",
+  type: "text"
 })`
   border: 1px solid ${props => props.theme.borderColor};
   font-size: 1rem;
