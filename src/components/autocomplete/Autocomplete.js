@@ -8,65 +8,6 @@ import Combobox from "../combobox/Combobox";
 import Option from "../option/Option";
 import Arrow from "../arrow/Arrow";
 
-const items = [
-  {
-    id: "1",
-    name: "Harriet McKinney",
-    firstName: "Harriet",
-    lastName: "McKinney",
-    email: "harriet.mckinney@kinetar.com"
-  },
-  {
-    id: "2",
-    name: "Harriet Banks",
-    firstName: "Harriet",
-    lastName: "Banks",
-    email: "harriet.banks@kinetar.com"
-  },
-  {
-    id: "3",
-    name: "Mathilda Summers",
-    firstName: "Mathilda",
-    lastName: "Summers",
-    email: "mathilda.summers@kinetar.com"
-  },
-  {
-    id: "4",
-    name: "Eugene Wong",
-    firstName: "Eugene",
-    lastName: "Wong",
-    email: "eugene.wong@kinetar.com"
-  },
-  {
-    id: "5",
-    name: "Marguerite Ryan",
-    firstName: "Marguerite",
-    lastName: "Ryan",
-    email: "marguerite.ryan@kinetar.com"
-  },
-  {
-    id: "6",
-    name: "Donald Butler",
-    firstName: "Donald",
-    lastName: "Butler",
-    email: "donald.butler@kinetar.com"
-  },
-  {
-    id: "7",
-    name: "Jim Carlson",
-    firstName: "Jim",
-    lastName: "Carlson",
-    email: "jim.carlson@kinetar.com"
-  },
-  {
-    id: "8",
-    name: "Alta Maxwell",
-    firstName: "Alta",
-    lastName: "Maxwell",
-    email: "alta.maxwell@kinetar.com"
-  }
-];
-
 const Icon = styled(Arrow)`
   position: absolute;
   right: 1rem;
@@ -80,12 +21,19 @@ export default class Autocomplete extends Component {
   static propTypes = {
     ariaLabelledBy: PropTypes.string.isRequired,
     onSelect: PropTypes.func,
-    children: PropTypes.func
+    children: PropTypes.func,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string
+      })
+    )
   };
 
   static defaultProps = {
     onSelect: () => {},
-    children: item => item.name
+    children: item => item.name,
+    items: []
   };
 
   state = {
@@ -155,7 +103,7 @@ export default class Autocomplete extends Component {
   };
 
   filteredItems = () =>
-    items.filter(item =>
+    this.props.items.filter(item =>
       item.name.toLowerCase().includes(this.state.value.toLowerCase())
     );
 

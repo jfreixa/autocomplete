@@ -5,7 +5,7 @@ const Combobox = styled.div.attrs({
   "aria-haspopup": "listbox"
 })`
   position: relative;
+  min-width: 300px;
 `;
 
-/** @component */
 export default Combobox;

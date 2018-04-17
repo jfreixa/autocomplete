@@ -18,5 +18,4 @@ const Listbox = styled.ul.attrs({
   }
 `;
 
-/** @component */
 export default Listbox;
