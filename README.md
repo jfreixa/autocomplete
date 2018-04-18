@@ -1,8 +1,8 @@
-#Autocomplete component
+# Autocomplete component
 
 
 
-##Props
+## Props
 
 * **ariaLabelledBy**(*string*): ID of the elements related separated by spaces.
 * **items**(*item[]*): List of items to use in autocomplete. 
@@ -10,7 +10,7 @@ These items need to have id and name property to correct use of the autocomplete
 * **onSelect**(*(item) => void*): Callback to know when the user selected a item.
 * **children**(*(item, active) => React.node*): Required for rendering the items inside the autocomplete
 
-##Task Opinion
+## Task Opinion
 
 I want to give the opinion about this project. First of all, I think the task is nice to see the skills and the way of 
 working of the candidate but I will encourage to give the requirements and the styles more detailed.  
